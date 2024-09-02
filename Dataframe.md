@@ -1167,12 +1167,6 @@ profile_df5.iloc[2:4,0:4]
 
 
 ```python
-import pandas as pd
-
-scores = [['Alice',70,80,85],['Shohei',95,78,70],['Bob',65,85,97],['Charlie',90,95,100]]
-
-df = pd.DataFrame(scores, index = ['AL','SH','BO','CH'],columns=['名前','国語','数学','英語'])
-df
 
 
 ```
@@ -1251,8 +1245,7 @@ df
 
 
 ```python
-df['国籍']=['アメリカ','イギリス','カナダ','イギリス']
-df
+
 ```
 
 
@@ -1326,9 +1319,7 @@ df
 
 
 ```python
-profile=[['中1','10分'],['中2','30分'],['中1','15分'],['中3','5分']]
-profile_df = pd.DataFrame(profile, index = ['AL','SH','BO','CH'],columns=['学年','通学時間'])
-profile_df
+
 ```
 
 
@@ -1385,8 +1376,7 @@ profile_df
 
 
 ```python
-df2 = pd.concat([df,profile_df],axis = 1) 
-df2
+
 ```
 
 
@@ -1470,10 +1460,7 @@ df2
 
 
 ```python
-students = [['Mamiko',80,75,90,'日本','中1','10分'],['Peter',65,85,90,'ドイツ','中2','15分']]
 
-students_df = pd.DataFrame(students, index=['MA','PE'], columns=['名前','国語','数学','英語','国籍','学年','通学時間'])
-students_df
 ```
 
 
@@ -1535,8 +1522,7 @@ students_df
 
 
 ```python
-df3 = pd.concat([df2,students_df],axis=0)
-df3
+
 ```
 
 
@@ -1752,8 +1738,7 @@ df
 
 
 ```python
-print(df.loc['SH':'MA','名前':'英語'])
-print(df.iloc[1:5,0:4])
+
 ```
 
              名前  国語  数学   英語
@@ -1770,8 +1755,7 @@ print(df.iloc[1:5,0:4])
 
 
 ```python
-print(df.loc['BO':,:])
-print(df.iloc[2:,:])
+
 ```
 
              名前  国語  数学   英語    国籍  学年 通学時間
