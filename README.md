@@ -1,2 +1,3 @@
-## [講義ノート](Dataframe.md)  
-## [演習](http://colab.research.google.com/github/ueharaLab/python8_dataframe/blob/main/Dataframe.ipynb)
+## [講義ノート](dataframe.md)
+
+## [演習ワークシート](http://colab.research.google.com/github/ueharaLab/python10_dataframe/blob/main/dataframe.ipynb)

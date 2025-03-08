@@ -3,25 +3,22 @@
    - １つの行が１つのデータ > 行方向にデータが並んでいる
    - 各列がデータの1項目 > 列方向にデータの項目が並んでいる
 
-<img src="74b097fa-c6c3-42fb-841c-be8dbc1eead7.png" width="80%">
+<img src="4b2346f3-e955-45b3-a40e-565f51d1ce2c.png" width="60%">
 
-<img src="34deea37-4185-432b-94d6-358d84845b74.png" width="60%">
-
-# 1. データ分析のデータ形式：DataFrame
-1. 行見出し、列見出しが付いたnumpy2次元配列　
+# 1. 表形式に見出しがつくとなお扱いやすい：DataFrame
+1. 行見出し、列見出しが付いた2次元配列　
 1. 行、列を自由に追加・削除できる　
 2. 特定の行、列を様々な条件で抽出できる
 3. 表形式での計算が容易（行合計、列合計、小計など）かつ高速
 
 
-<img src="37797e23-c672-4360-86e6-94e51ae316ba.png" width="70%">
+<img src="c8af0cb0-ecd2-4645-addc-7d878aabd63f.png" width="70%">
 
 # 1. DataFrameを作成する
 1. 2次元配列を作る
 
 
 ```python
-import numpy as np
 
 profiles =[['Lucy',160,52,'A','USA','20','student'],
  ['Bob',180,52,'O','England','30','dentist'],
@@ -223,7 +220,8 @@ profile_df
 
 # 2. 行、列の追加
 
-### 1) 列の追加  
+### 1) 列の追加
+２次元配列に一度に列を加えることができる。つまり、各データに、項目を１つ加えることができる
 
 構文：
 
@@ -272,6 +270,7 @@ print(profile_df)
     　　　 DataFrame1, DataFrame2の行数は一致していることが条件    
 ---
     例：2列のDataFrameをprofile_dfに連結する
+    indexが一致していることに注意！　profile_df1のindex = [ ]がprofile_df2と異なるとどうなるかを確認せよ
 
 
 ```python
@@ -446,6 +445,7 @@ profile_df3
 ```
 ---
     例：2行のDataFrameをprofile_dfに連結する
+    これは、２次元配列リスト型でのappendと同じ
 
 
 ```python
@@ -1163,7 +1163,8 @@ profile_df5.iloc[2:4,0:4]
 <img src="b223ae9b-042a-4742-b8c3-147dfba4bd9a.png" width="70%">
 
 # 演習1 Dataframeの作成
-以下のようなDataFrameを作成するコーディングを書け。なお、indexは名前の頭文字2桁とする。
+以下のようなDataFrameを作成するコーディングを書け。なお、indexは名前の頭文字2桁とする。  
+<img src="00b9fd78-7c02-4521-83a5-e1d7741cdc32.png" width="30%">
 
 
 ```python
@@ -1316,63 +1317,8 @@ profile_df5.iloc[2:4,0:4]
 
 
 2) 上記のDataFrameに以下の2列のDataFrameを連結せよ
-
-
-```python
-
-```
-
-
-
-
-<div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>学年</th>
-      <th>通学時間</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>AL</th>
-      <td>中1</td>
-      <td>10分</td>
-    </tr>
-    <tr>
-      <th>SH</th>
-      <td>中2</td>
-      <td>30分</td>
-    </tr>
-    <tr>
-      <th>BO</th>
-      <td>中1</td>
-      <td>15分</td>
-    </tr>
-    <tr>
-      <th>CH</th>
-      <td>中3</td>
-      <td>5分</td>
-    </tr>
-  </tbody>
-</table>
-</div>
-
-
+   
+<img src="f0a18b5b-b91a-4f8c-830a-0cb8d39acec3.png" width="10%">
 
 
 ```python
@@ -1458,67 +1404,7 @@ profile_df5.iloc[2:4,0:4]
 
 3) 上記のDataFrameに以下の2行のDataFrameを連結せよ。なお、2行のDataFrameのindex名は、名前の頭文字2文字とする。
 
-
-```python
-
-```
-
-
-
-
-<div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>名前</th>
-      <th>国語</th>
-      <th>数学</th>
-      <th>英語</th>
-      <th>国籍</th>
-      <th>学年</th>
-      <th>通学時間</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>MA</th>
-      <td>Mamiko</td>
-      <td>80</td>
-      <td>75</td>
-      <td>90</td>
-      <td>日本</td>
-      <td>中1</td>
-      <td>10分</td>
-    </tr>
-    <tr>
-      <th>PE</th>
-      <td>Peter</td>
-      <td>65</td>
-      <td>85</td>
-      <td>90</td>
-      <td>ドイツ</td>
-      <td>中2</td>
-      <td>15分</td>
-    </tr>
-  </tbody>
-</table>
-</div>
-
-
+<img src="000ed0f4-8b80-4373-86ee-21684712fb98.png" width="40%">
 
 
 ```python
@@ -1621,6 +1507,11 @@ profile_df5.iloc[2:4,0:4]
 </div>
 
 
+
+
+```python
+
+```
 
 # 演習3 スライシング
 
@@ -1768,6 +1659,43 @@ df
     CH  Charlie  90  95  100  イギリス  中3   5分
     MA   Mamiko  80  75   90    日本  中1  10分
     PE    Peter  65  85   90   ドイツ  中2  15分
+    
+
+3. 以下は、dfに体重、身長2列を追加するコーディングだが、うまく連結できていない。バグを修正せよ。
+
+
+```python
+wh = [[60,170],[90,192],[80,180],[100,175],[70,180],[90,200]]
+wh_df = pd.DataFrame(wh,columns = ['体重','身長'])
+students = pd.concat([df,wh_df],axis = 1)
+print(students)
+```
+
+             名前    国語    数学     英語     体重     身長
+    AL    Alice  70.0  80.0   85.0    NaN    NaN
+    SH   Shohei  95.0  78.0   70.0    NaN    NaN
+    BO      Bob  65.0  85.0   97.0    NaN    NaN
+    CH  Charlie  90.0  95.0  100.0    NaN    NaN
+    0       NaN   NaN   NaN    NaN   60.0  170.0
+    1       NaN   NaN   NaN    NaN   90.0  192.0
+    2       NaN   NaN   NaN    NaN   80.0  180.0
+    3       NaN   NaN   NaN    NaN  100.0  175.0
+    4       NaN   NaN   NaN    NaN   70.0  180.0
+    5       NaN   NaN   NaN    NaN   90.0  200.0
+    
+
+4. dfをスライシングして以下の2行のDataFrameを追加せよ
+
+
+```python
+scores = [['Rui',80,60,90],['Jordan',50,60,100]]
+score_df = pd.DataFrame(scores, index = ['RU','JO'],columns=['名前','国語','数学','英語'])
+print(score_df)
+```
+
+            名前  国語  数学   英語
+    RU     Rui  80  60   90
+    JO  Jordan  50  60  100
     
 
 
